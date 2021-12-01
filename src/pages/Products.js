@@ -6,13 +6,13 @@ class ProductComponent extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-            users:[]
+            products:[]
         }
     }
 
     componentDidMount(){
       ProductServices.getProducts().then((data) => {
-            this.setState({ users: data})
+            this.setState({ products: data})
         });
     }
 
@@ -26,24 +26,28 @@ class ProductComponent extends React.Component {
 
                             <td> Id</td>
                             <td> Nombre</td>
-                            <td> Correo</td>
-                            <td> Login</td>
-                            <td> Pass</td>
+                            <td> Codigo</td>
+                            <td> Nit proveedor</td>
+                            <td> Iva compra</td>
+                            <td> Precio compra</td>
+                            <td> Precio venta</td>
                             <td> Estado</td>
                         </tr>
 
                     </thead>
                     <tbody>
                         {
-                            this.state.users.map(
-                                user => 
-                                <tr key = {user.id}>
-                                     <td> {user.id}</td>   
-                                     <td> {user.proc_nombre}</td>   
-                                     <td> {user.usua_correo}</td>   
-                                     <td> {user.usua_login}</td>
-                                     <td> {user.usua_pass}</td>
-                                     <td> {user.usua_estado}</td>    
+                            this.state.products.map(
+                                product => 
+                                <tr key = {product.id}>
+                                     <td> {product.id}</td>   
+                                     <td> {product.proc_nombre}</td>   
+                                     <td> {product.proc_codigo}</td>   
+                                     <td> {product.nit_prov}</td>
+                                     <td> {product.iva_compra}</td>
+                                     <td> {product.precio_compra}</td>
+                                     <td> {product.precio_venta}</td> 
+                                     <td> {product.proc_estado}</td>     
                                 </tr>
                             )
                         }
