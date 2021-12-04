@@ -1,7 +1,7 @@
 import React from 'react';
 import CustomerServices from '../services/CustomerServices';
 
-class ProductComponent extends React.Component {
+class CustomerComponent extends React.Component {
 
     constructor(props){
         super(props)
@@ -11,7 +11,7 @@ class ProductComponent extends React.Component {
     }
 
     componentDidMount(){
-        CustomerServices.getProducts().then((data) => {
+        CustomerServices.getCustomers().then((data) => {
             this.setState({ customers: data})
         });
     }
@@ -26,11 +26,10 @@ class ProductComponent extends React.Component {
 
                             <td> Id</td>
                             <td> Nombre</td>
-                            <td> Codigo</td>
-                            <td> Nit proveedor</td>
-                            <td> Iva compra</td>
-                            <td> Precio compra</td>
-                            <td> Precio venta</td>
+                            <td> Cedula</td>
+                            <td> Direccion</td>
+                            <td> Correo</td>
+                            <td> Telefono</td>
                             <td> Estado</td>
                         </tr>
 
@@ -41,13 +40,12 @@ class ProductComponent extends React.Component {
                                 customer => 
                                 <tr key = {customer.id}>
                                      <td> {customer.id}</td>   
-                                     <td> {customer.proc_nombre}</td>   
-                                     <td> {customer.proc_codigo}</td>   
-                                     <td> {customer.nit_prov}</td>
-                                     <td> {customer.iva_compra}</td>
-                                     <td> {customer.precio_compra}</td>
-                                     <td> {customer.precio_venta}</td> 
-                                     <td> {customer.proc_estado}</td>     
+                                     <td> {customer.cli_nombre}</td>   
+                                     <td> {customer.cli_cedula}</td>   
+                                     <td> {customer.cli_direccion}</td>
+                                     <td> {customer.cli_email}</td>
+                                     <td> {customer.cli_telefono}</td>
+                                     <td> {customer.cli_estado}</td>    
                                 </tr>
                             )
                         }
@@ -61,4 +59,4 @@ class ProductComponent extends React.Component {
     }
 }
 
-export default ProductComponent
+export default CustomerComponent
