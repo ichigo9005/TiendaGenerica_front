@@ -25,7 +25,7 @@ export const SidebarData = [
   {
     title: 'Clientes',
     path: '/customers',
-    icon: <FaIcons.FaCartPlus />,
+    icon: <IoIcons.IoIosPeople />,
     cName: 'nav-text'
   }
 ];
