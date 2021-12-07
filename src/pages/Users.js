@@ -101,7 +101,7 @@ class UserComponent extends React.Component {
                 <h1 className = "text-center"> Lista de Usuarios</h1>
                 <div style={{margin: '20px'}}>
                     <button style={{border: '0',background: 'none'}} onClick={()=>this.mostrarModalInsertar()}>Usuario Nuevo <FaIcons.FaUserPlus /></button>
-                    </div>
+                </div>
                 <table className = "table table-striped">
                     <thead>
                         <tr>
