@@ -27,5 +27,11 @@ export const SidebarData = [
     path: '/customers',
     icon: <IoIcons.IoIosPeople />,
     cName: 'nav-text'
+  },
+  {
+    title: 'Proveedores',
+    path: '/providers',
+    icon: <FaIcons.FaUserTie />,
+    cName: 'nav-text'
   }
 ];
